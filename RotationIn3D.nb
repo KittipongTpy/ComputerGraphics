@@ -20,7 +20,7 @@ WindowFrame->Normal*)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Rotation about any axes", "Title",
+Cell["Rotation about orbitary axis", "Title",
  CellChangeTimes->{{3.94809303068017*^9, 
   3.948093067641032*^9}},ExpressionUUID->"0b0b804a-fe31-45a2-b3ee-\
 b54d95e711ad"],
