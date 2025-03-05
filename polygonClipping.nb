@@ -1,0 +1,590 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23433,        582]
+NotebookOptionsPosition[     21924,        547]
+NotebookOutlinePosition[     22401,        566]
+CellTagsIndexPosition[     22358,        563]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Polygon Clipping (Suther-Hodgeman Algorithm)", "Title",
+ CellChangeTimes->{{3.947464493652512*^9, 3.9474644984784813`*^9}, {
+  3.948087711227149*^9, 
+  3.948087735015465*^9}},ExpressionUUID->"e168343d-31ab-4596-897d-\
+c33b91d422e1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"clipper", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"10", ",", " ", "10"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", " ", "160"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"260", ",", " ", "160"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"260", ",", " ", "10"}], "}"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"polygonPoints", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"75", ",", " ", "150"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"25", ",", " ", "200"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "25"}], ",", " ", "100"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "50"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"75", ",", 
+       RowBox[{"-", "25"}]}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"150", ",", " ", "50"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"175", ",", "100"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"125", ",", "200"}], "}"}]}], "}"}]}], ";"}]}], "Code",
+ CellChangeTimes->{{3.9474645373231*^9, 3.947464628144713*^9}, {
+  3.9474647370832787`*^9, 3.947464820614008*^9}, {3.947464870469105*^9, 
+  3.9474648736820173`*^9}, {3.9474651939058113`*^9, 3.947465212439752*^9}, {
+  3.947465323950889*^9, 3.947465330025999*^9}, {3.948087472662489*^9, 
+  3.948087484685068*^9}, {3.949016613658349*^9, 3.949016717061697*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"8616ea3c-d364-45fa-b5b1-ac600fd5de88"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", "\n", "\t", 
+   RowBox[{"Red", ",", " ", 
+    RowBox[{"Polygon", "[", "polygonPoints", "]"}], ",", "\n", "\t", "Green", 
+    ",", " ", 
+    RowBox[{"Line", "[", 
+     RowBox[{"Append", "[", 
+      RowBox[{"clipper", ",", " ", 
+       RowBox[{"First", "[", "clipper", "]"}]}], "]"}], "]"}]}], "\n", "}"}], 
+  "]"}]], "Code",
+ CellChangeTimes->{{3.947464839976141*^9, 3.9474650272406473`*^9}, {
+  3.9474651024293013`*^9, 3.947465106845323*^9}, {3.947465155935431*^9, 
+  3.947465185617444*^9}, {3.947465229557723*^9, 3.947465266560505*^9}, {
+  3.94746533513253*^9, 3.947465384744182*^9}, {3.947465469179462*^9, 
+  3.9474654699876633`*^9}, {3.9480864438081923`*^9, 3.9480864638180237`*^9}, {
+  3.948087479375291*^9, 3.9480875130572777`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"b861e767-87a4-4a20-b547-06e7ef414e5a"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 0, 0], 
+    PolygonBox[{{75, 150}, {25, 200}, {-25, 100}, {0, 50}, {75, -25}, {150, 
+     50}, {175, 100}, {125, 200}}]}, 
+   {RGBColor[0, 1, 0], 
+    LineBox[{{10, 10}, {10, 160}, {260, 160}, {260, 10}, {10, 10}}]}},
+  ImageSize->{636.1468749999983, Automatic}]], "Output",
+ CellChangeTimes->{{3.94746533901898*^9, 3.947465385238473*^9}, 
+   3.947465470380849*^9, {3.948084439500124*^9, 3.948084439582426*^9}, {
+   3.948086451745257*^9, 3.948086465423109*^9}, 3.9480864974120607`*^9, 
+   3.94808751346684*^9, 3.9490166075121517`*^9, 3.94901671917344*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"8d22d985-79e0-421a-a671-5ad7cffd1e45"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Intersect", "[", 
+    RowBox[{"p1_", ",", " ", "p2_", ",", " ", "p3_", ",", " ", "p4_"}], "]"}],
+    " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "numX", ",", " ", "numY", ",", " ", "den", ",", " ", "x", ",", " ", 
+       "y"}], "}"}], ",", "\n", "\t", 
+     RowBox[{
+      RowBox[{"den", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"p1", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+           RowBox[{"p2", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "*", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"p3", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+           RowBox[{"p4", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ")"}]}], " ", "-", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"p1", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+           RowBox[{"p2", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ")"}], " ", "*", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"p3", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+           RowBox[{"p4", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}]}]}], ";", "\n", "\t", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"den", " ", "==", " ", "0"}], ",", " ", 
+        RowBox[{"Return", "[", 
+         RowBox[{"{", "}"}], "]"}]}], "]"}], ";", "\n", "\t", 
+      RowBox[{"numX", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"p1", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], " ", 
+            RowBox[{"p2", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], " ", "-", " ", 
+           RowBox[{
+            RowBox[{"p1", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], " ", 
+            RowBox[{"p2", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}]}], ")"}], " ", "*", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"p3", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+           RowBox[{"p4", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}], " ", "-", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"p1", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+           RowBox[{"p2", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "*", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"p3", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], " ", 
+            RowBox[{"p4", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], " ", "-", " ", 
+           RowBox[{
+            RowBox[{"p3", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], " ", 
+            RowBox[{"p4", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}]}], ")"}]}]}]}], ";", "\n", "\t", 
+      RowBox[{"numY", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"p1", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], " ", 
+            RowBox[{"p2", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], " ", "-", " ", 
+           RowBox[{
+            RowBox[{"p1", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], " ", 
+            RowBox[{"p2", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}]}], ")"}], " ", "*", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"p3", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+           RowBox[{"p4", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ")"}]}], " ", "-", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"p1", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+           RowBox[{"p2", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ")"}], " ", "*", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"p3", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], " ", 
+            RowBox[{"p4", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], " ", "-", " ", 
+           RowBox[{
+            RowBox[{"p3", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], " ", 
+            RowBox[{"p4", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}]}], ")"}]}]}]}], ";", "\n", "\t", 
+      RowBox[{"x", " ", "=", " ", 
+       RowBox[{"numX", " ", "/", " ", "den"}]}], ";", "\n", "\t", 
+      RowBox[{"y", " ", "=", " ", 
+       RowBox[{"numY", " ", "/", " ", "den"}]}], ";", "\n", "\t", 
+      RowBox[{"Return", "[", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", " ", "y"}], "}"}], "]"}], ";"}]}], "\n", "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.9480856022694893`*^9, 3.948085800628297*^9}, {
+   3.948085831749167*^9, 3.948085945780964*^9}, {3.948086034654907*^9, 
+   3.948086071102252*^9}, {3.948086962912024*^9, 3.948086977411978*^9}, 
+   3.94808721818613*^9, {3.948087399379345*^9, 3.948087416869701*^9}, {
+   3.948087525597906*^9, 3.948087561902033*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"9c377030-fc52-432d-b5ae-6bc1fbebd1f8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ClipEdge", "[", 
+    RowBox[{"polygonPoints_", ",", " ", "clipperS_", ",", " ", "clipperE_"}], 
+    "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "i", ",", " ", "k", ",", " ", "iP", ",", " ", "kP", ",", " ", "iPos", 
+       ",", " ", "kPos", ",", " ", 
+       RowBox[{"newPolygonPoints", " ", "=", " ", 
+        RowBox[{"{", "}"}]}]}], "}"}], ",", "\n", "\t", 
+     RowBox[{
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", " ", "=", " ", "1"}], ",", " ", 
+        RowBox[{"i", " ", "<=", " ", 
+         RowBox[{"Length", "[", "polygonPoints", "]"}]}], ",", " ", 
+        RowBox[{"i", "++"}], ",", "\n", "\t\t", 
+        RowBox[{
+         RowBox[{"k", " ", "=", " ", 
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{"i", ",", " ", 
+             RowBox[{"Length", "[", "polygonPoints", "]"}]}], "]"}], " ", "+",
+            " ", "1"}]}], ";", "\n", "\t\t", 
+         RowBox[{"iP", " ", "=", " ", 
+          RowBox[{"polygonPoints", "[", 
+           RowBox[{"[", "i", "]"}], "]"}]}], ";", "\n", "\t\t", 
+         RowBox[{"kP", " ", "=", " ", 
+          RowBox[{"polygonPoints", "[", 
+           RowBox[{"[", "k", "]"}], "]"}]}], ";", "\n", "\t\t", "\n", "\t\t", 
+         
+         RowBox[{"(*", " ", 
+          RowBox[{
+          "Compute", " ", "positions", " ", "relative", " ", "to", " ", "the",
+            " ", "clipping", " ", "edge"}], " ", "*)"}], "\n", "\t\t", 
+         RowBox[{"iPos", " ", "=", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"clipperE", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+              RowBox[{"clipperS", "[", 
+               RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "*", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"iP", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+              RowBox[{"clipperS", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], ")"}]}], " ", "-", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"clipperE", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+              RowBox[{"clipperS", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], ")"}], " ", "*", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"iP", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+              RowBox[{"clipperS", "[", 
+               RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}]}]}], ";", "\n", 
+         "\t\t", 
+         RowBox[{"kPos", " ", "=", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"clipperE", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+              RowBox[{"clipperS", "[", 
+               RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "*", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"kP", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+              RowBox[{"clipperS", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], ")"}]}], " ", "-", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"clipperE", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+              RowBox[{"clipperS", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], ")"}], " ", "*", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"kP", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+              RowBox[{"clipperS", "[", 
+               RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}]}]}], ";", "\n", "\t",
+          "\n", "\t\t", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+           RowBox[{"Case", " ", "1"}], ":", " ", 
+           RowBox[{"Both", " ", "points", " ", "inside"}]}], " ", "*)"}], 
+         "\n", "\t\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"iPos", " ", "<", " ", "0"}], " ", "&&", " ", 
+            RowBox[{"kPos", " ", "<", " ", "0"}]}], ",", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"newPolygonPoints", ",", " ", "kP"}], "]"}], ";"}]}], 
+          "\n", "\t\t", "]"}], ";", "\n", "\t", "\n", "\t\t", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Case", " ", "2"}], ":", " ", 
+            RowBox[{"First", " ", "point", " ", "outside"}]}], ",", " ", 
+           RowBox[{"second", " ", "inside"}]}], " ", "*)"}], "\n", "\t\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"iPos", " ", ">=", " ", "0"}], " ", "&&", " ", 
+            RowBox[{"kPos", " ", "<", " ", "0"}]}], ",", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"newPolygonPoints", ",", " ", 
+              RowBox[{"Intersect", "[", 
+               RowBox[{
+               "clipperS", ",", " ", "clipperE", ",", " ", "iP", ",", " ", 
+                "kP"}], "]"}]}], "]"}], ";", "\n", "\t\t\t", 
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"newPolygonPoints", ",", " ", "kP"}], "]"}], ";"}]}], 
+          "\n", "\t\t", "]"}], ";", "\n", "\t", "\n", "\t\t", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Case", " ", "3"}], ":", " ", 
+            RowBox[{"First", " ", "point", " ", "inside"}]}], ",", " ", 
+           RowBox[{"second", " ", "outside"}]}], " ", "*)"}], "\n", "\t\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"iPos", " ", "<", " ", "0"}], " ", "&&", " ", 
+            RowBox[{"kPos", " ", ">=", " ", "0"}]}], ",", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"newPolygonPoints", ",", " ", 
+              RowBox[{"Intersect", "[", 
+               RowBox[{
+               "clipperS", ",", " ", "clipperE", ",", " ", "iP", ",", " ", 
+                "kP"}], "]"}]}], "]"}], ";"}]}], "\n", "\t\t", "]"}], ";"}]}],
+        "\n", "\t", "\n", "\t\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"Case", " ", "4"}], ":", " ", 
+         RowBox[{
+          RowBox[{"Both", " ", "points", " ", "outside"}], " ", 
+          "\[RightArrow]", " ", 
+          RowBox[{"No", " ", "points", " ", "added"}]}]}], " ", "*)"}], "\n", 
+       "\t", "]"}], ";", "\n", "\t", 
+      RowBox[{"Return", "[", "newPolygonPoints", "]"}], ";"}]}], "\n", 
+    "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.947467609444922*^9, 3.947467667460041*^9}, {
+   3.947467697761456*^9, 3.947467698704631*^9}, {3.947467773237527*^9, 
+   3.9474677906692944`*^9}, {3.947467828890967*^9, 3.9474678783471823`*^9}, {
+   3.947468015462812*^9, 3.9474680161247873`*^9}, {3.947468093120124*^9, 
+   3.947468193559659*^9}, {3.9474682655762863`*^9, 3.947468292052641*^9}, {
+   3.947468366603951*^9, 3.94746836951033*^9}, {3.948084540304701*^9, 
+   3.948084575764764*^9}, {3.948084620725395*^9, 3.948084992805237*^9}, {
+   3.9480855308529587`*^9, 3.948085586363236*^9}, {3.9480859818836107`*^9, 
+   3.948086000903833*^9}, {3.948086039775041*^9, 3.9480860399807177`*^9}, {
+   3.948086076342804*^9, 3.948086295274493*^9}, {3.948086338371265*^9, 
+   3.9480863849311666`*^9}, {3.9480867493844357`*^9, 3.94808675872066*^9}, {
+   3.948086863636076*^9, 3.9480868886705513`*^9}, {3.948086981762315*^9, 
+   3.948086985397621*^9}, 3.9480872377001266`*^9, {3.948087564725239*^9, 
+   3.948087661760309*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"59b395ce-cdfa-453f-80b3-4ab87e251df3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"SuthHodgClip", "[", 
+    RowBox[{"clipper_", ",", " ", "polygonPoints_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", " ", "k", ",", " ", 
+       RowBox[{"newPolygonPoints", " ", "=", " ", "polygonPoints"}]}], "}"}], 
+     ",", "\n", "\t", 
+     RowBox[{
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", " ", "=", " ", "1"}], ",", " ", 
+        RowBox[{"i", " ", "<=", " ", 
+         RowBox[{"Length", "[", "clipper", "]"}]}], ",", " ", 
+        RowBox[{"i", "++"}], ",", "\n", "\t\t", 
+        RowBox[{
+         RowBox[{"k", " ", "=", " ", 
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{"i", ",", " ", 
+             RowBox[{"Length", "[", "clipper", "]"}]}], "]"}], " ", "+", " ", 
+           "1"}]}], ";", "\n", "\t\t", 
+         RowBox[{"newPolygonPoints", " ", "=", " ", 
+          RowBox[{"ClipEdge", "[", 
+           RowBox[{"newPolygonPoints", ",", " ", 
+            RowBox[{"clipper", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], ",", " ", 
+            RowBox[{"clipper", "[", 
+             RowBox[{"[", "k", "]"}], "]"}]}], "]"}]}], ";"}]}], "\n", "\t", 
+       "]"}], ";", "\n", "\t", 
+      RowBox[{"Return", "[", "newPolygonPoints", "]"}], ";"}]}], "\n", 
+    "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.947465819185914*^9, 3.947465866521096*^9}, {
+   3.9474672598885813`*^9, 3.947467370324834*^9}, {3.9474674434291687`*^9, 
+   3.947467488081365*^9}, {3.947467546887864*^9, 3.9474676009978523`*^9}, {
+   3.947467701223803*^9, 3.947467701931789*^9}, {3.947468104636725*^9, 
+   3.947468105827544*^9}, {3.947468359400374*^9, 3.947468363123356*^9}, {
+   3.948086398231511*^9, 3.9480864203809843`*^9}, {3.948086542691976*^9, 
+   3.948086567962069*^9}, {3.948086604986677*^9, 3.948086628356202*^9}, {
+   3.9480867221812687`*^9, 3.9480867305088654`*^9}, {3.948086836709914*^9, 
+   3.948086858688463*^9}, 3.9480872494923687`*^9, {3.948087677601582*^9, 
+   3.9480876946854362`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"b678b5be-f7c8-412d-bd01-80a400bdb369"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SuthHodgClip", "[", 
+  RowBox[{"clipper", ",", " ", "polygonPoints"}], "]"}]], "Code",
+ CellChangeTimes->{{3.9480864248724613`*^9, 3.948086455250914*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"71b75fdb-3240-4921-8709-b9a847ac4cf3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"40", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"110", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"150", ",", "50"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"175", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"145", ",", "160"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"85", ",", "160"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"75", ",", "150"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"65", ",", "160"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "160"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "40"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.948087259767488*^9, 3.948087697339704*^9, 
+  3.9490166075314903`*^9, 3.949016727322016*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"89abbf2d-89a8-4160-901e-b14fd415a201"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", "\n", 
+   RowBox[{"Red", ",", " ", 
+    RowBox[{"Polygon", "[", "polygonPoints", "]"}], ",", "\n", "   ", "Blue", 
+    ",", " ", 
+    RowBox[{"Polygon", "[", 
+     RowBox[{"SuthHodgClip", "[", 
+      RowBox[{"clipper", ",", " ", "polygonPoints"}], "]"}], "]"}], ",", " ", 
+    "\n", "   ", "Green", ",", " ", 
+    RowBox[{"Line", "[", 
+     RowBox[{"Append", "[", 
+      RowBox[{"clipper", ",", " ", 
+       RowBox[{"First", "[", "clipper", "]"}]}], "]"}], "]"}]}], "\n", "}"}], 
+  "]"}]], "Code",
+ CellChangeTimes->{{3.948087270280761*^9, 3.948087295686779*^9}, {
+  3.948087430645937*^9, 3.9480874576307983`*^9}, {3.948087703242186*^9, 
+  3.948087705089746*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"664f9e24-9662-4cda-a7b1-34eb274d2125"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 0, 0], 
+    PolygonBox[{{75, 150}, {25, 200}, {-25, 100}, {0, 50}, {75, -25}, {150, 
+     50}, {175, 100}, {125, 200}}]}, 
+   {RGBColor[0, 0, 1], 
+    PolygonBox[{{40, 10}, {110, 10}, {150, 50}, {175, 100}, {145, 160}, {85, 
+     160}, {75, 150}, {65, 160}, {10, 160}, {10, 40}}]}, 
+   {RGBColor[0, 1, 0], 
+    LineBox[{{10, 10}, {10, 160}, {260, 160}, {260, 10}, {10, 10}}]}},
+  ImageSize->{840.05, Automatic}]], "Output",
+ CellChangeTimes->{{3.948087281632959*^9, 3.9480872962332163`*^9}, 
+   3.9480874220396767`*^9, 3.948087458242132*^9, {3.948087700324276*^9, 
+   3.948087707032813*^9}, 3.949016607538396*^9, 3.94901672920689*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"4b2c636f-6539-4e78-af79-4b6d24618c4e"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{Automatic, -1333}, {Automatic, -244}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+CellContext->Notebook,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d4cb1307-dd01-416d-85d0-8979e16e9dc5"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 238, 4, 123, "Title",ExpressionUUID->"e168343d-31ab-4596-897d-c33b91d422e1"],
+Cell[821, 28, 1579, 40, 90, "Code",ExpressionUUID->"8616ea3c-d364-45fa-b5b1-ac600fd5de88"],
+Cell[CellGroupData[{
+Cell[2425, 72, 872, 17, 138, "Code",ExpressionUUID->"b861e767-87a4-4a20-b547-06e7ef414e5a"],
+Cell[3300, 91, 679, 12, 654, "Output",ExpressionUUID->"8d22d985-79e0-421a-a671-5ad7cffd1e45"]
+}, Open  ]],
+Cell[3994, 106, 5269, 139, 258, "Code",ExpressionUUID->"9c377030-fc52-432d-b5ae-6bc1fbebd1f8"],
+Cell[9266, 247, 7757, 175, 762, "Code",ExpressionUUID->"59b395ce-cdfa-453f-80b3-4ab87e251df3"],
+Cell[17026, 424, 2124, 45, 210, "Code",ExpressionUUID->"b678b5be-f7c8-412d-bd01-80a400bdb369"],
+Cell[CellGroupData[{
+Cell[19175, 473, 257, 4, 65, "Code",ExpressionUUID->"71b75fdb-3240-4921-8709-b9a847ac4cf3"],
+Cell[19435, 479, 865, 25, 42, "Output",ExpressionUUID->"89abbf2d-89a8-4160-901e-b14fd415a201"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20337, 509, 798, 18, 162, "Code",ExpressionUUID->"664f9e24-9662-4cda-a7b1-34eb274d2125"],
+Cell[21138, 529, 758, 14, 857, "Output",ExpressionUUID->"4b2c636f-6539-4e78-af79-4b6d24618c4e"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

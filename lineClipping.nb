@@ -1,0 +1,496 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19342,        488]
+NotebookOptionsPosition[     18173,        459]
+NotebookOutlinePosition[     18627,        477]
+CellTagsIndexPosition[     18584,        474]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Cohen SutherLand", "Title",
+ CellChangeTimes->{{3.946634309536592*^9, 
+  3.9466343148590937`*^9}},ExpressionUUID->"021d03b5-54f3-4566-a933-\
+3d8e59ab85e1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Find4BitCode", "[", 
+    RowBox[{"min_List", ",", " ", "max_List", ",", " ", "point_List"}], "]"}],
+    " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "y", ",", " ", 
+       RowBox[{"code", " ", "=", " ", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", "0", ",", " ", "0", ",", " ", "0"}], 
+         "}"}]}]}], "}"}], ",", "\n", "  ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", " ", "y"}], "}"}], " ", "=", " ", "point"}], ";", 
+      "\n", "  ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"y", " ", ">", " ", 
+         RowBox[{"max", "[", 
+          RowBox[{"[", "2", "]"}], "]"}]}], ",", " ", 
+        RowBox[{
+         RowBox[{"code", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], " ", "=", " ", "1"}]}], "]"}], ";", 
+      " ", "\n", "  ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"y", " ", "<", " ", 
+         RowBox[{"min", "[", 
+          RowBox[{"[", "2", "]"}], "]"}]}], ",", " ", 
+        RowBox[{
+         RowBox[{"code", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], " ", "=", " ", "1"}]}], "]"}], ";", 
+      " ", "\n", "  ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"x", " ", ">", " ", 
+         RowBox[{"max", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], ",", " ", 
+        RowBox[{
+         RowBox[{"code", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], " ", "=", " ", "1"}]}], "]"}], ";", 
+      " ", "\n", "  ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"x", " ", "<", " ", 
+         RowBox[{"min", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], ",", " ", 
+        RowBox[{
+         RowBox[{"code", "[", 
+          RowBox[{"[", "4", "]"}], "]"}], " ", "=", " ", "1"}]}], "]"}], ";", 
+      " ", "\n", "  ", "code"}]}], "\n", "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.946609647969577*^9, 3.946609666620124*^9}, {
+   3.946609701208045*^9, 3.946609720662821*^9}, {3.9466097687178*^9, 
+   3.94660979166551*^9}, {3.946632251355339*^9, 3.9466322573704*^9}, 
+   3.946632495122554*^9, {3.946632887504974*^9, 3.946632922305275*^9}, 
+   3.946634512534029*^9, 3.949015642115942*^9, {3.949015682574574*^9, 
+   3.949015688102467*^9}, 3.949016069948917*^9},
+ CellLabel->
+  "In[150]:=",ExpressionUUID->"3d61023c-5e58-4ad3-9bba-dcfb7983a273"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Find4BitCode", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "150"}], ",", " ", 
+     RowBox[{"-", "150"}]}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"150", ",", "150"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"200", ",", "0"}], "}"}]}], "]"}]], "Code",
+ CellChangeTimes->{{3.9490241147403917`*^9, 3.949024221224433*^9}, {
+  3.9490242512669067`*^9, 3.94902426474487*^9}},
+ CellLabel->
+  "In[166]:=",ExpressionUUID->"df5a85df-c33e-4c09-8320-10e13d0142f0"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{{3.949024152106574*^9, 3.949024221618496*^9}, {
+  3.9490242534750137`*^9, 3.949024265220675*^9}},
+ CellLabel->
+  "Out[166]=",ExpressionUUID->"a6c27706-5c2d-4ffb-9b06-6acdb2707ddd"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"cohenSutherlandClip", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x1_", ",", " ", "y1_"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x2_", ",", " ", "y2_"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{
+      "xmin_", ",", " ", "xmax_", ",", " ", "ymin_", ",", " ", "ymax_"}], 
+      "}"}]}], "]"}], " ", ":=", " ", "\n", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"outcode1", ",", " ", "outcode2", ",", " ", 
+       RowBox[{"accept", " ", "=", " ", "False"}], ",", " ", "x", ",", " ", 
+       "y", ",", " ", "p1", ",", " ", "p2"}], "}"}], ",", "\n", "  ", "\n", 
+     "  ", 
+     RowBox[{
+      RowBox[{"p1", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{"x1", ",", " ", "y1"}], "}"}]}], ";", "\n", "  ", 
+      RowBox[{"p2", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{"x2", ",", " ", "y2"}], "}"}]}], ";", "\n", "  ", 
+      RowBox[{"outcode1", " ", "=", " ", 
+       RowBox[{"computeOutCode", "[", 
+        RowBox[{"p1", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{
+          "xmin", ",", " ", "xmax", ",", " ", "ymin", ",", " ", "ymax"}], 
+          "}"}]}], "]"}]}], ";", "\n", "  ", 
+      RowBox[{"outcode2", " ", "=", " ", 
+       RowBox[{"computeOutCode", "[", 
+        RowBox[{"p2", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{
+          "xmin", ",", " ", "xmax", ",", " ", "ymin", ",", " ", "ymax"}], 
+          "}"}]}], "]"}]}], ";", "\n", "  ", "\n", "  ", 
+      RowBox[{"While", "[", 
+       RowBox[{"True", ",", "\n", "   ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"BitOr", "[", 
+            RowBox[{"outcode1", ",", " ", "outcode2"}], "]"}], " ", "==", " ",
+            "0"}], ",", "\n", "    ", 
+          RowBox[{
+           RowBox[{"accept", " ", "=", " ", "True"}], ";", "\n", "    ", 
+           RowBox[{"Break", "[", "]"}]}], ",", "\n", "    ", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"BitAnd", "[", 
+              RowBox[{"outcode1", ",", " ", "outcode2"}], "]"}], " ", "!=", 
+             " ", "0"}], ",", "\n", "     ", 
+            RowBox[{"Break", "[", "]"}], ",", "\n", "     ", "\n", "     ", 
+            RowBox[{"With", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"outcodeOut", " ", "=", " ", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"outcode1", " ", "!=", " ", "0"}], ",", " ", 
+                  "outcode1", ",", " ", "outcode2"}], "]"}]}], "}"}], ",", 
+              "\n", "      ", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"BitAnd", "[", 
+                   RowBox[{"outcodeOut", ",", " ", "TOP"}], "]"}], " ", "!=", 
+                  " ", "0"}], ",", "\n", "       ", 
+                 RowBox[{
+                  RowBox[{"x", " ", "=", " ", 
+                   RowBox[{
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], " ", "+", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"p2", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "*", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"ymax", " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"p2", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], ")"}]}]}]}]}], ";", 
+                  "\n", "       ", 
+                  RowBox[{"y", " ", "=", " ", "ymax"}]}], ",", "\n", "      ", 
+                 RowBox[{"If", "[", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"BitAnd", "[", 
+                    RowBox[{"outcodeOut", ",", " ", "BOTTOM"}], "]"}], " ", "!=",
+                     " ", "0"}], ",", "\n", "       ", 
+                   RowBox[{
+                    RowBox[{"x", " ", "=", " ", 
+                    RowBox[{
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], " ", "+", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"p2", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "*", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"ymin", " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"p2", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], ")"}]}]}]}]}], ";", 
+                    "\n", "       ", 
+                    RowBox[{"y", " ", "=", " ", "ymin"}]}], ",", "\n", 
+                   "      ", 
+                   RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"BitAnd", "[", 
+                    RowBox[{"outcodeOut", ",", " ", "RIGHT"}], "]"}], " ", "!=",
+                     " ", "0"}], ",", "\n", "       ", 
+                    RowBox[{
+                    RowBox[{"y", " ", "=", " ", 
+                    RowBox[{
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], " ", "+", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"p2", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "*", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"xmax", " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"p2", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}]}]}]}], ";", 
+                    "\n", "       ", 
+                    RowBox[{"x", " ", "=", " ", "xmax"}]}], ",", "\n", 
+                    "      ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"BitAnd", "[", 
+                    RowBox[{"outcodeOut", ",", " ", "LEFT"}], "]"}], " ", "!=",
+                     " ", "0"}], ",", "\n", "       ", 
+                    RowBox[{
+                    RowBox[{"y", " ", "=", " ", 
+                    RowBox[{
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], " ", "+", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"p2", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "*", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"xmin", " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"p2", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+                    RowBox[{"p1", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}]}]}]}], ";", 
+                    "\n", "       ", 
+                    RowBox[{"x", " ", "=", " ", "xmin"}], ";"}]}], "\n", 
+                    "       ", "]"}]}], "]"}]}], "]"}]}], "]"}], ";", "\n", 
+               "      ", "\n", "      ", 
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"outcodeOut", " ", "==", " ", "outcode1"}], ",", 
+                 "\n", "       ", 
+                 RowBox[{
+                  RowBox[{"p1", " ", "=", " ", 
+                   RowBox[{"{", 
+                    RowBox[{"x", ",", " ", "y"}], "}"}]}], ";", "\n", 
+                  "       ", 
+                  RowBox[{"outcode1", " ", "=", " ", 
+                   RowBox[{"computeOutCode", "[", 
+                    RowBox[{"p1", ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "xmin", ",", " ", "xmax", ",", " ", "ymin", ",", " ", 
+                    "ymax"}], "}"}]}], "]"}]}]}], ",", "\n", "       ", 
+                 RowBox[{
+                  RowBox[{"p2", " ", "=", " ", 
+                   RowBox[{"{", 
+                    RowBox[{"x", ",", " ", "y"}], "}"}]}], ";", "\n", 
+                  "       ", 
+                  RowBox[{"outcode2", " ", "=", " ", 
+                   RowBox[{"computeOutCode", "[", 
+                    RowBox[{"p2", ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "xmin", ",", " ", "xmax", ",", " ", "ymin", ",", " ", 
+                    "ymax"}], "}"}]}], "]"}]}]}]}], "\n", "       ", "]"}], 
+               ";"}]}], "\n", "      ", "]"}]}], "\n", "     ", "]"}]}], "\n",
+          "    ", "]"}]}], "\n", "   ", "]"}], ";", "\n", "  ", "\n", "  ", 
+      RowBox[{"If", "[", 
+       RowBox[{"accept", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"p1", ",", " ", "p2"}], "}"}], ",", " ", "None"}], "]"}]}]}],
+     "\n", "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.946608876920883*^9, 3.946608957183715*^9}, {
+   3.946609020876747*^9, 3.94660908182486*^9}, {3.94660913187827*^9, 
+   3.946609151259059*^9}, {3.9466093652383957`*^9, 3.9466094229114447`*^9}, {
+   3.946609929389176*^9, 3.9466100308628674`*^9}, {3.946632262541304*^9, 
+   3.9466322839821987`*^9}, {3.9466323498512*^9, 3.946632354424767*^9}, {
+   3.9466325991629*^9, 3.9466328692613173`*^9}, {3.946634419036607*^9, 
+   3.9466344351644497`*^9}, {3.9466345013930387`*^9, 3.946634526246698*^9}, 
+   3.9490156594220877`*^9, 3.949016096590486*^9},
+ CellLabel->
+  "In[152]:=",ExpressionUUID->"6849e8c9-ff3b-4ea3-9355-82e2296c7f08"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xmin", ",", " ", "ymin"}], "}"}], " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "150"}], ",", " ", 
+     RowBox[{"-", "150"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xmax", ",", " ", "ymax"}], "}"}], " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"150", ",", "150"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"lineStart", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "100"}], ",", "0"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"lineEnd", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "200"}], ",", 
+      RowBox[{"-", "200"}]}], "}"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"clippedLine", " ", "=", " ", 
+   RowBox[{"cohenSutherlandClip", "[", 
+    RowBox[{"lineStart", ",", " ", "lineEnd", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"xmin", ",", " ", "xmax", ",", " ", "ymin", ",", " ", "ymax"}], 
+      "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", "clippedLine", "]"}], ";"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"clippedLine", " ", "=!=", " ", "None"}], ",", "\n", " ", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"{", "\n", "   ", 
+     RowBox[{
+      RowBox[{"Rectangle", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"xmin", ",", " ", "ymin"}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"xmax", ",", " ", "ymax"}], "}"}]}], "]"}], ",", "\n", "   ",
+       "Red", ",", " ", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{"lineStart", ",", " ", "lineEnd"}], "}"}], "]"}], ",", "\n", 
+      "   ", "Blue", ",", " ", "Thick", ",", " ", 
+      RowBox[{"Line", "[", "clippedLine", "]"}]}], "\n", "   ", "}"}], "]"}], 
+   ",", "\n", " ", 
+   RowBox[{
+   "Print", "[", "\"\<Line is outside the clipping window.\>\"", "]"}]}], 
+  "\n", "]"}]}], "Code",
+ CellChangeTimes->{{3.949016115495462*^9, 3.94901621147434*^9}, {
+  3.9490164158895693`*^9, 3.9490164298836727`*^9}, {3.949016463597896*^9, 
+  3.94901646617491*^9}, {3.949026366957535*^9, 3.9490264254139347`*^9}, {
+  3.949026663352077*^9, 3.949026740485817*^9}, {3.949026787235277*^9, 
+  3.94902679479819*^9}},
+ CellLabel->
+  "In[227]:=",ExpressionUUID->"1264f78b-5443-4be6-99e8-04abe3ccf789"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "100"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "150"}], ",", 
+     RowBox[{"-", "100"}]}], "}"}]}], "}"}]], "Print",
+ CellChangeTimes->{{3.94902673643839*^9, 3.949026741647018*^9}, 
+   3.94902679544768*^9},
+ CellLabel->
+  "During evaluation of \
+In[227]:=",ExpressionUUID->"44b7682a-8e8c-4a6b-a5f4-953859f658c9"],
+
+Cell[BoxData[
+ GraphicsBox[{RectangleBox[{-150, -150}, {150, 150}], 
+   {RGBColor[1, 0, 0], LineBox[{{-100, 0}, {-200, -200}}]}, 
+   {RGBColor[0, 0, 1], Thickness[Large], 
+    LineBox[{{-100, 0}, {-150, -100}}]}}]], "Output",
+ CellChangeTimes->{{3.949016121800769*^9, 3.949016136810813*^9}, 
+   3.9490162124074287`*^9, 3.9490164305857267`*^9, 3.949016466861903*^9, 
+   3.949024152121686*^9, {3.949026405060548*^9, 3.9490264259826183`*^9}, {
+   3.949026675034096*^9, 3.949026741648641*^9}, 3.949026795448457*^9},
+ CellLabel->
+  "Out[233]=",ExpressionUUID->"88ab5841-d66d-4ee5-8409-12a2921a6469"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{Automatic, -1186}, {Automatic, -374}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"03574730-bebb-4d72-be39-6dc9e38bf8ba"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 161, 3, 123, "Title",ExpressionUUID->"021d03b5-54f3-4566-a933-3d8e59ab85e1"],
+Cell[744, 27, 2377, 62, 234, "Code",ExpressionUUID->"3d61023c-5e58-4ad3-9bba-dcfb7983a273"],
+Cell[CellGroupData[{
+Cell[3146, 93, 512, 14, 65, "Code",ExpressionUUID->"df5a85df-c33e-4c09-8320-10e13d0142f0"],
+Cell[3661, 109, 293, 6, 42, "Output",ExpressionUUID->"a6c27706-5c2d-4ffb-9b06-6acdb2707ddd"]
+}, Open  ]],
+Cell[3969, 118, 10807, 241, 1074, "Code",ExpressionUUID->"6849e8c9-ff3b-4ea3-9355-82e2296c7f08"],
+Cell[CellGroupData[{
+Cell[14801, 363, 2309, 64, 402, "Code",ExpressionUUID->"1264f78b-5443-4be6-99e8-04abe3ccf789"],
+Cell[17113, 429, 435, 14, 29, "Print",ExpressionUUID->"44b7682a-8e8c-4a6b-a5f4-953859f658c9"],
+Cell[17551, 445, 594, 10, 470, "Output",ExpressionUUID->"88ab5841-d66d-4ee5-8409-12a2921a6469"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
