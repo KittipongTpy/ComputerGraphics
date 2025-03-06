@@ -5,3 +5,4 @@
 - Rotation about orbitary axis (3D)
 - 3D Viewing and Clipping
 - Line Drawing (Bresenham)
+- Drawing circle through 3 points
