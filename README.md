@@ -7,3 +7,4 @@
 - Line Drawing (Bresenham)
 - Drawing circle through 3 points
 - Infinite Tree of Circles
+- Midpoint Ellipse Algorithm (Kenneth H. Carpenter)
