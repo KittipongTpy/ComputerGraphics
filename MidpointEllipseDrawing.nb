@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     23996,        559]
+NotebookDataLength[     24050,        561]
 NotebookOptionsPosition[     23077,        535]
-NotebookOutlinePosition[     23500,        552]
-CellTagsIndexPosition[     23457,        549]
+NotebookOutlinePosition[     23554,        554]
+CellTagsIndexPosition[     23511,        551]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -512,7 +512,7 @@ Cell[BoxData[
     {GrayLevel[0], RectangleBox[{50, 1}]}, 
     {GrayLevel[0], RectangleBox[{-50, -1}]}, 
     {GrayLevel[0], RectangleBox[{-50, 1}]}}},
-  ImageSize->{675.1968749999999, Automatic}]], "Output",
+  ImageSize->{575.0906249999975, Automatic}]], "Output",
  CellChangeTimes->{
   3.951045275859151*^9, 3.951045332788475*^9, {3.9510454428978853`*^9, 
    3.951045456070088*^9}, 3.951045501259389*^9, 3.951046470394114*^9, {
@@ -535,6 +535,8 @@ Cell[BoxData[
 },
 WindowSize->{Full, Full},
 WindowMargins->{{-1267, Automatic}, {Automatic, -305}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
 CellContext->Notebook,
 FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
 StyleDefinitions->"Default.nb",
@@ -558,7 +560,7 @@ Cell[2929, 81, 6052, 138, 954, "Code",ExpressionUUID->"dfbb2363-ebe0-40d5-a94c-5
 Cell[8984, 221, 1078, 29, 114, "Code",ExpressionUUID->"eb5fa1e1-5e8d-4d8b-9983-f4e0fbb66d41"],
 Cell[CellGroupData[{
 Cell[10087, 254, 1374, 29, 138, "Code",ExpressionUUID->"6bc65502-cf05-49db-b2c3-290685677666"],
-Cell[11464, 285, 11585, 246, 383, "Output",ExpressionUUID->"4da25137-3046-47d0-969e-11a9e50e6443"]
+Cell[11464, 285, 11585, 246, 329, "Output",ExpressionUUID->"4da25137-3046-47d0-969e-11a9e50e6443"]
 }, Open  ]]
 }, Open  ]]
 }
